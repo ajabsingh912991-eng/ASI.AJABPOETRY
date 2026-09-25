@@ -1,501 +1,340 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="hi">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<meta name="description" content="ASI Poetry — Ajab Singh की शायरी, कविताएँ और एहसास।">
-<meta name="theme-color" content="#07152f">
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#081323">
+<meta name="description" content="ASI Poetry — Ajab Singh की मौलिक शायरी, कविताएँ और विचार।">
 <title>ASI Poetry | Ajab Singh</title>
-
 <style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap');
 
-html{
-  scroll-behavior:smooth;
+:root{
+ --bg:#081323;--panel:#101f35;--line:#24364e;
+ --white:#f5f7ff;--muted:#a7b7ce;--blue:#5bbdff;
+ --gold:#e6c78b
 }
-
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{
-  font-family:
-    system-ui,
-    "Noto Sans Devanagari",
-    "Mangal",
-    sans-serif;
-  background:#061126;
-  color:#f5f7ff;
-  line-height:1.7;
+ margin:0;background:var(--bg);color:var(--white);
+ font-family:"Noto Sans Devanagari",system-ui,sans-serif;
+ line-height:1.9
 }
-
-/* ================= HEADER ================= */
-
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:auto;padding:0 22px}
 header{
-  position:sticky;
-  top:0;
-  z-index:1000;
-  background:rgba(6,17,38,.88);
-  backdrop-filter:blur(14px);
-  border-bottom:1px solid rgba(255,255,255,.08);
+ position:sticky;top:0;z-index:20;
+ background:#081323ed;backdrop-filter:blur(12px);
+ border-bottom:1px solid var(--line)
 }
-
 .nav{
-  max-width:1150px;
-  margin:auto;
-  padding:16px 22px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+ min-height:78px;display:flex;align-items:center;
+ justify-content:space-between;gap:15px
 }
-
-.logo{
-  display:flex;
-  align-items:center;
-  gap:12px;
+.brand{display:flex;align-items:center;gap:12px}
+.brand img,.brand .fallback{
+ width:49px;height:49px;border-radius:50%;
+ object-fit:cover;border:1px solid #4daaff66
 }
-
-.logo-circle{
-  width:45px;
-  height:45px;
-  border-radius:50%;
-  display:grid;
-  place-items:center;
-  font-size:18px;
-  font-weight:900;
-  letter-spacing:-1px;
-  background:linear-gradient(135deg,#0b75ff,#35c6ff);
-  box-shadow:0 0 25px rgba(35,155,255,.35);
+.fallback{
+ display:none;place-items:center;
+ background:#164a83;font-weight:800
 }
-
-.logo-text{
-  font-size:1.2rem;
-  font-weight:800;
-}
-
-.logo-text span{
-  display:block;
-  font-size:.65rem;
-  color:#8ea7ce;
-  letter-spacing:2px;
-}
-
-nav a{
-  color:#dbe7ff;
-  text-decoration:none;
-  margin-left:22px;
-  font-size:.95rem;
-  transition:.25s;
-}
-
-nav a:hover{
-  color:#48c8ff;
-}
-
-/* ================= HERO ================= */
-
+.brand b{display:block;font-size:20px;letter-spacing:.5px}
+.brand small{display:block;color:var(--muted);font-size:10px}
+nav{display:flex;gap:22px;font-size:13px}
+nav a:hover{color:var(--blue)}
 .hero{
-  min-height:650px;
-  display:flex;
-  align-items:center;
-  position:relative;
-  overflow:hidden;
-  background:
-    radial-gradient(circle at 75% 35%,rgba(20,118,255,.22),transparent 32%),
-    radial-gradient(circle at 20% 80%,rgba(0,210,255,.10),transparent 30%),
-    #061126;
+ position:relative;overflow:hidden;
+ background:
+ radial-gradient(circle at 85% 25%,#164c8060,transparent 40%),
+ linear-gradient(160deg,#0d2039,#081323 75%);
+ border-bottom:1px solid var(--line)
 }
-
-.hero::before{
-  content:"";
-  position:absolute;
-  width:500px;
-  height:500px;
-  border:1px solid rgba(61,184,255,.12);
-  border-radius:50%;
-  right:-170px;
-  top:60px;
+.hero-inner{
+ min-height:580px;display:grid;
+ grid-template-columns:1.2fr .8fr;
+ align-items:center;gap:40px;padding-top:70px;
+ padding-bottom:80px
 }
-
-.hero-container{
-  max-width:1150px;
-  width:100%;
-  margin:auto;
-  padding:80px 22px;
-  display:grid;
-  grid-template-columns:1.2fr .8fr;
-  gap:60px;
-  align-items:center;
+.eyebrow{
+ display:inline-block;color:var(--gold);
+ letter-spacing:3px;font-size:11px;font-weight:700;
+ text-transform:uppercase
 }
-
-.badge{
-  display:inline-block;
-  padding:7px 14px;
-  border-radius:50px;
-  border:1px solid rgba(64,193,255,.3);
-  background:rgba(34,136,255,.08);
-  color:#61d0ff;
-  font-size:.82rem;
-  margin-bottom:20px;
+h1{
+ font-size:clamp(42px,6vw,76px);
+ line-height:1.25;margin:20px 0;
+ letter-spacing:-1px
 }
-
-.hero h1{
-  font-size:clamp(3rem,7vw,5.8rem);
-  line-height:1.05;
-  letter-spacing:-3px;
-  margin-bottom:25px;
-}
-
-.hero h1 span{
-  background:linear-gradient(90deg,#ffffff,#54cfff);
-  -webkit-background-clip:text;
-  color:transparent;
-}
-
-.hero p{
-  max-width:650px;
-  color:#aebdd8;
-  font-size:1.12rem;
-  margin-bottom:32px;
-}
-
-.buttons{
-  display:flex;
-  gap:14px;
-  flex-wrap:wrap;
-}
-
+h1 em{font-style:normal;color:var(--blue)}
+.lead{color:var(--muted);font-size:16px;max-width:560px}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
 .btn{
-  display:inline-block;
-  padding:12px 22px;
-  border-radius:50px;
-  text-decoration:none;
-  font-weight:700;
-  transition:.25s;
+ display:inline-block;padding:11px 22px;
+ border-radius:8px;font-weight:700;font-size:13px
 }
-
-.btn-primary{
-  color:white;
-  background:linear-gradient(135deg,#087cff,#22c4ff);
-  box-shadow:0 10px 30px rgba(10,132,255,.25);
+.primary{background:var(--blue);color:#061323}
+.secondary{border:1px solid #58718d;color:#e8f3ff}
+.hero-art{
+ position:relative;display:grid;place-items:center;
+ min-height:330px
 }
-
-.btn-primary:hover{
-  transform:translateY(-2px);
+.ring{
+ width:290px;height:290px;border:1px solid #57b8ff55;
+ border-radius:50%;display:grid;place-items:center;
+ box-shadow:0 0 100px #1686ed20,inset 0 0 70px #1686ed18
 }
-
-.btn-outline{
-  color:#dbe9ff;
-  border:1px solid rgba(255,255,255,.15);
-  background:rgba(255,255,255,.04);
+.ring:before{
+ content:"";position:absolute;width:325px;height:325px;
+ border:1px dashed #5bbdff40;border-radius:50%
 }
-
-/* ================= ASI MARK ================= */
-
-.hero-mark{
-  width:310px;
-  height:310px;
-  margin:auto;
-  border-radius:50%;
-  border:1px solid rgba(73,199,255,.3);
-  display:grid;
-  place-items:center;
-  position:relative;
-  background:
-    radial-gradient(circle,rgba(31,133,255,.15),transparent 65%);
-  box-shadow:
-    0 0 80px rgba(0,139,255,.15),
-    inset 0 0 60px rgba(0,139,255,.08);
+.ring img{
+ width:235px;height:235px;object-fit:contain;
+ border-radius:50%
 }
-
-.hero-mark::before,
-.hero-mark::after{
-  content:"";
-  position:absolute;
-  border:1px dashed rgba(71,190,255,.25);
-  border-radius:50%;
+.ring .fallback{
+ width:235px;height:235px;font-size:70px
 }
-
-.hero-mark::before{
-  inset:22px;
+.hero-art p{
+ position:absolute;bottom:-5px;color:var(--gold);
+ font-size:10px;letter-spacing:2px;text-align:center
 }
-
-.hero-mark::after{
-  inset:-18px;
+section.content{padding:85px 0}
+.kicker{color:var(--gold);font-size:11px;letter-spacing:3px}
+h2{font-size:clamp(27px,4vw,39px);margin:8px 0}
+.intro{color:var(--muted);margin:0 0 35px}
+.cards{
+ display:grid;grid-template-columns:repeat(3,1fr);gap:18px
 }
-
-.mark-text{
-  font-size:5rem;
-  font-weight:950;
-  letter-spacing:-7px;
-  background:linear-gradient(135deg,#fff,#37c8ff);
-  -webkit-background-clip:text;
-  color:transparent;
+.card{
+ background:linear-gradient(145deg,#14263f,#0c192c);
+ border:1px solid var(--line);border-radius:15px;
+ padding:28px;min-height:325px;
+ display:flex;flex-direction:column
 }
-
-.mark-sub{
-  position:absolute;
-  bottom:55px;
-  font-size:.65rem;
-  letter-spacing:3px;
-  color:#7ca8d5;
-}
-
-/* ================= MAIN ================= */
-
-main{
-  max-width:1150px;
-  margin:auto;
-  padding:70px 22px;
-}
-
-.section-heading{
-  margin-bottom:30px;
-}
-
-.section-heading small{
-  color:#48c8ff;
-  text-transform:uppercase;
-  letter-spacing:3px;
-  font-size:.72rem;
-}
-
-.section-heading h2{
-  font-size:2.3rem;
-  margin-top:5px;
-}
-
-/* ================= POETRY ================= */
-
-.poetry-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
-}
-
-.poem-card{
-  padding:28px;
-  min-height:300px;
-  border-radius:22px;
-  border:1px solid rgba(255,255,255,.09);
-  background:
-    linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.018));
-  box-shadow:0 20px 50px rgba(0,0,0,.18);
-  transition:.3s;
-}
-
-.poem-card:hover{
-  transform:translateY(-6px);
-  border-color:rgba(64,196,255,.35);
-}
-
-.poem-number{
-  color:#42c9ff;
-  font-size:.75rem;
-  letter-spacing:2px;
-  margin-bottom:16px;
-}
-
-.poem-card h3{
-  font-size:1.35rem;
-  margin-bottom:20px;
-}
-
+.card:hover{border-color:#5bbdff88;transform:translateY(-3px)}
+.card{transition:.25s}
+.num{color:var(--gold);font-size:11px;letter-spacing:2px}
+.card h3{font-size:22px;margin:13px 0 18px}
 .poem{
-  white-space:pre-line;
-  color:#dce6f7;
-  font-size:1.05rem;
+ white-space:pre-line;font-size:16px;
+ color:#e8edf7;flex:1
 }
-
-.author{
-  margin-top:25px;
-  color:#7185a5;
-  font-size:.9rem;
+.sign{
+ margin-top:24px;padding-top:16px;
+ border-top:1px solid var(--line);
+ color:var(--blue);font-size:12px
 }
-
-/* ================= ABOUT ================= */
-
-.about{
-  margin-top:90px;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:22px;
+.quote{
+ margin:20px 0 0;padding:35px;
+ border-left:3px solid var(--gold);
+ background:#112239;color:#f2dfb9;
+ font-size:clamp(18px,3vw,25px);line-height:2
 }
-
-.about-card{
-  padding:30px;
-  border-radius:22px;
-  background:rgba(255,255,255,.035);
-  border:1px solid rgba(255,255,255,.08);
-}
-
-.about-card h3{
-  margin-bottom:14px;
-  font-size:1.4rem;
-}
-
-.about-card p{
-  color:#aebdd8;
-}
-
-.tags{
-  margin-top:18px;
-}
-
+.tags{display:flex;gap:10px;flex-wrap:wrap;margin-top:25px}
 .tag{
-  display:inline-block;
-  padding:7px 13px;
-  margin:4px;
-  border-radius:30px;
-  background:rgba(40,150,255,.1);
-  border:1px solid rgba(60,190,255,.15);
-  color:#8edcff;
-  font-size:.82rem;
+ border:1px solid #3b5472;border-radius:40px;
+ padding:6px 15px;color:#c8d8ea;font-size:12px
 }
-
-/* ================= INSTAGRAM ================= */
-
-.social{
-  margin-top:70px;
-  text-align:center;
-  padding:45px 20px;
-  border-radius:25px;
-  background:
-    linear-gradient(135deg,
-    rgba(17,103,220,.16),
-    rgba(0,194,255,.06));
-  border:1px solid rgba(78,195,255,.14);
+.about{
+ display:grid;grid-template-columns:1fr 1fr;gap:24px
 }
-
-.social h2{
-  margin-bottom:10px;
+.panel{
+ background:var(--panel);border:1px solid var(--line);
+ border-radius:15px;padding:30px
 }
-
-.social p{
-  color:#9eafca;
-  margin-bottom:22px;
+.panel h3{color:var(--gold);margin-top:0}
+.panel p{color:var(--muted)}
+.contact{
+ text-align:center;padding:55px 25px;
+ background:linear-gradient(130deg,#15375a,#0c1c32);
+ border:1px solid #365575;border-radius:18px
 }
-
-.instagram{
-  display:inline-block;
-  padding:11px 22px;
-  border-radius:50px;
-  color:white;
-  text-decoration:none;
-  font-weight:700;
-  background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);
-}
-
-/* ================= FOOTER ================= */
-
+.contact p{color:#c1cde0}
 footer{
-  border-top:1px solid rgba(255,255,255,.08);
-  text-align:center;
-  padding:35px 20px;
-  color:#687b9c;
-  font-size:.9rem;
+ padding:32px 20px;text-align:center;
+ border-top:1px solid var(--line);
+ color:var(--muted);font-size:12px
 }
-
-footer strong{
-  color:#9bb8df;
+footer b{color:var(--white)}
+@media(max-width:760px){
+ .nav{min-height:70px}
+ nav{gap:10px;font-size:11px}
+ .brand b{font-size:16px}
+ .brand small{font-size:8px}
+ .hero-inner{
+  grid-template-columns:1fr;text-align:center;
+  padding-top:60px;padding-bottom:65px;gap:15px
+ }
+ .hero-art{grid-row:1;min-height:230px}
+ .ring{width:205px;height:205px}
+ .ring:before{width:225px;height:225px}
+ .ring img,.ring .fallback{width:170px;height:170px}
+ .ring .fallback{font-size:50px}
+ .hero-art p{bottom:-8px;font-size:8px}
+ .lead{margin:auto}
+ .actions{justify-content:center}
+ .cards,.about{grid-template-columns:1fr}
+ section.content{padding:60px 0}
+ .card{min-height:260px}
 }
-
-/* ================= MOBILE ================= */
-
-@media(max-width:800px){
-
-  .nav{
-    padding:13px 16px;
-  }
-
-  nav a{
-    display:none;
-  }
-
-  .hero-container{
-    grid-template-columns:1fr;
-    text-align:center;
-    padding-top:65px;
-  }
-
-  .hero p{
-    margin-left:auto;
-    margin-right:auto;
-  }
-
-  .buttons{
-    justify-content:center;
-  }
-
-  .hero-mark{
-    width:240px;
-    height:240px;
-  }
-
-  .mark-text{
-    font-size:4rem;
-  }
-
-  .poetry-grid{
-    grid-template-columns:1fr;
-  }
-
-  .about{
-    grid-template-columns:1fr;
-    margin-top:65px;
-  }
-
-  main{
-    padding-top:55px;
-  }
-}
-
-@media(max-width:430px){
-
-  .hero{
-    min-height:620px;
-  }
-
-  .hero h1{
-    font-size:3rem;
-    letter-spacing:-2px;
-  }
-
-  .hero-mark{
-    width:205px;
-    height:205px;
-  }
-
-  .mark-text{
-    font-size:3.4rem;
-  }
+@media(max-width:380px){
+ nav a:nth-child(2){display:none}
 }
 </style>
 </head>
-
 <body>
 
-<!-- HEADER -->
-
 <header>
-  <div class="nav">
+ <div class="wrap nav">
+  <a href="#home" class="brand">
+   <img src="asi-logo.jpg" alt="ASI original logo"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+   <span class="fallback">ASI</span>
+   <span><b>ASI POETRY</b>
+   <small>शब्द • एहसास • शायरी</small></span>
+  </a>
+  <nav>
+   <a href="#poetry">रचनाएँ</a>
+   <a href="#about">परिचय</a>
+   <a href="#contact">संपर्क</a>
+  </nav>
+ </div>
+</header>
 
-    <div class="logo">
+<main id="home">
 
-      <div class="logo-circle">
-        ASI
-      </div>
+<section class="hero">
+ <div class="wrap hero-inner">
+  <div>
+   <span class="eyebrow">The art of words</span>
+   <h1>मेरे <em>अल्फ़ाज़</em>,<br>मेरी पहचान।</h1>
+   <p class="lead">
+    मोहब्बत के एहसास से लेकर समाज के सवालों तक —
+    कुछ बातें जो दिल में रहीं, अब शब्दों में हैं।
+   </p>
+   <div class="actions">
+    <a class="btn primary" href="#poetry">रचनाएँ पढ़ें ↗</a>
+    <a class="btn secondary" href="#about">लेखक का परिचय</a>
+   </div>
+  </div>
+  <div class="hero-art">
+   <div class="ring">
+    <img src="asi-logo.jpg" alt="ASI official logo"
+         onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+    <span class="fallback">ASI</span>
+   </div>
+   <p>AWARENESS • SERVICE • INNOVATION</p>
+  </div>
+ </div>
+</section>
 
-      <div class="logo-text">
-        ASI Poetry
-        <span>शब्द • एहसास • शायरी</span>
-      </div>
+<section class="content" id="poetry">
+ <div class="wrap">
+  <span class="kicker">ORIGINAL WRITINGS</span>
+  <h2>चुनिंदा रचनाएँ</h2>
+  <p class="intro">हर रचना के पीछे एक एहसास, एक अनुभव और एक विचार।</p>
 
-    </div>
+  <div class="cards">
 
-    <nav>
-      <a href="#poetry">शायरियाँ</a>
-      <a href="#about">मेरे बारे में</a>
-      <
+   <article class="card">
+    <span class="num">01 — मोहब्बत</span>
+    <h3>ख़ास यार</h3>
+    <div class="poem">तुम कह दो जाकर उनसे, हम उनके ख़ास यार नहीं,
+वो मरते हैं तुम पर, हम उनके वफ़ादार नहीं</div>
+    <div class="sign">✍ Ajab Singh</div>
+   </article>
+
+   <article class="card">
+    <span class="num">02 — इश्क़</span>
+    <h3>कमबख़्त इश्क़</h3>
+    <div class="poem">तुम्हें सौगात तुम्हारे हुस्न की हम पे ऐतबार तो कर लेते,
+अरे, कमबख़्त इश्क़ ही तो है, हम भी किसी और से कर लेते।</div>
+    <div class="sign">✍ Ajab Singh</div>
+   </article>
+
+   <article class="card">
+    <span class="num">03 — समाज</span>
+    <h3>हवालात</h3>
+    <div class="poem">लिखने को हम और भी लिख दें,
+कल कई साल खड़े होंगे,
+परसों हम हवालात में खड़े होंगे।</div>
+    <div class="sign">✍ Ajab Singh</div>
+   </article>
+
+  </div>
+ </div>
+</section>
+
+<section class="content">
+ <div class="wrap">
+  <span class="kicker">BEYOND THE WORDS</span>
+  <h2>अल्फ़ाज़ों की दुनिया</h2>
+  <blockquote class="quote">
+   “कुछ शब्द सिर्फ़ पढ़ने के लिए नहीं होते,
+   वे महसूस करने और सोचने के लिए होते हैं।”
+  </blockquote>
+  <div class="tags">
+   <span class="tag">मोहब्बत</span>
+   <span class="tag">इश्क़</span>
+   <span class="tag">दर्द</span>
+   <span class="tag">ज़िंदगी</span>
+   <span class="tag">समाज</span>
+   <span class="tag">विचार</span>
+  </div>
+ </div>
+</section>
+
+<section class="content" id="about">
+ <div class="wrap">
+  <span class="kicker">THE AUTHOR</span>
+  <h2>लेखक का परिचय</h2>
+  <p class="intro">कलम, विचार और अनुभव का सफ़र।</p>
+  <div class="about">
+   <div class="panel">
+    <h3>Ajab Singh</h3>
+    <p>
+     मैं अपनी भावनाओं, अनुभवों और समाज से जुड़े विचारों
+     को शायरी और कविता के माध्यम से व्यक्त करता हूँ।
+     ASI Poetry मेरी रचनाओं का डिजिटल संग्रह है।
+    </p>
+   </div>
+   <div class="panel">
+    <h3>ASI Poetry</h3>
+    <p>
+     यहाँ मोहब्बत, ज़िंदगी, समाज और विचारों से जुड़ी
+     मौलिक रचनाएँ एक ही जगह पढ़ी जा सकती हैं।
+     हर शब्द अपनी एक पहचान रखता है।
+    </p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="content" id="contact">
+ <div class="wrap">
+  <div class="contact">
+   <span class="kicker">STAY CONNECTED</span>
+   <h2>जुड़िए अल्फ़ाज़ों के सफ़र से</h2>
+   <p>नई रचनाओं और विचारों के लिए Instagram पर जुड़ें।</p>
+   <a class="btn primary"
+      href="https://www.instagram.com/asicreator2026/"
+      target="_blank" rel="noopener noreferrer">
+      Instagram पर जुड़ें ↗
+   </a>
+  </div>
+ </div>
+</section>
+
+</main>
+
+<footer>
+ © 2026 <b>ASI Poetry</b> • Ajab Singh<br>
+ शब्द • एहसास • शायरी
+</footer>
+
+</body>
+</html>
